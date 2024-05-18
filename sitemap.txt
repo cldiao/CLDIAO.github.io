@@ -1,0 +1,7 @@
+http://example.com/2024/05/18/My-New-Post/
+http://example.com/2024/05/18/hello-world/
+http://example.com/
+http://example.com/tags/email/
+http://example.com/tags/VBA/
+http://example.com/tags/OUTLOOK/
+http://example.com/tags/EXCEL/
