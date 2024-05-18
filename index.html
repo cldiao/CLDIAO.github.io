@@ -91,42 +91,18 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="VBA代码"><a href="#VBA代码" class="headerlink" title="VBA代码"></a>VBA代码</h3><pre><code>添加参数(邮件地址，主题，内容，附件&#39;
-Public Function sendemail(sendto As String, subj As String, mbody As String, filepath As String)
-    On Error Resume Next
-    Dim oLApp As Object
-    Dim oItem As Object
-    &#39;创建Outlook应用程序对象&#39;
-    Set oLApp = CreateObject(&quot;Outlook.application&quot;)
-    &#39; 创建邮件对象&#39;
-    Set oItem = oLApp.createitem(0)
-        
-    With oItem
-        .Subject = subj
-        .To = sendto
-        .HTMLBody = mbody
-        &#39;加上这一句就可以添加附件，需要几个附件就添加几个附件
-        .Attachments.Add filepath
-        .Send
-        &#39;判断是否发送成功’
-        If Err.Number = 0 Then
-            sendemail = &quot;发送成功&quot;
-        Else
-            &#39;如果发送失败则返回失败原因&#39;
-            sendemail = &quot;发送失败：&quot; &amp; Err.Description
-        End If
-    End With
-    &#39; 清理对象&#39;
-    Set oLApp = Nothing
-    Set oItem = Nothing
-End Function
+        <h3 id="使用注意事项："><a href="#使用注意事项：" class="headerlink" title="使用注意事项："></a>使用注意事项：</h3><pre><code>VBA代码如下，编写`sendemail()`函数
+在excel中使用这个函数，有四个参数，邮箱地址，邮件主题，邮件内容，邮件附件。
+为了邮件内容在收件箱中有正常的邮件格式，需要修改为html格式，可以使用在线工具完成，如：https://www.iamwawa.cn/text2html.html
+邮件附件可以是0-多个。按需在函数中定义，增加或删减filepath As String参数。
+使用时，在函数所在单元格回车，可看到“发送成功”字样，邮件即发出。
+发件人是outlook中的默认发件人。
 </code></pre>
-<p>使用注意事项：	<br>    VBA代码如上，编写<code>sendemail()</code>函数<br>    在excel中使用这个函数，有四个参数，邮箱地址，邮件主题，邮件内容，邮件附件。<br>    为了邮件内容在收件箱中有正常的邮件格式，需要修改为html格式，可以使用在线工具完成，如：<a target="_blank" rel="noopener" href="https://www.iamwawa.cn/text2html.html">https://www.iamwawa.cn/text2html.html</a><br>    邮件附件可以是0-多个。按需在函数中定义，增加或删减filepath As String参数。<br>    使用时，在函数所在单元格回车，可看到“发送成功”字样，邮件即发出。<br>    发件人是outlook中的默认发件人。</p>
-<p>学习地址：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wr4y157B5/?spm_id_from=333.999.0.0&vd_source=c654521c8de482e881017110f8a3e0d4">https://www.bilibili.com/video/BV1wr4y157B5/?spm_id_from=333.999.0.0&amp;vd_source=c654521c8de482e881017110f8a3e0d4</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1zB4y1L7ir/?spm_id_from=333.999.0.0&vd_source=c654521c8de482e881017110f8a3e0d4">https://www.bilibili.com/video/BV1zB4y1L7ir/?spm_id_from=333.999.0.0&amp;vd_source=c654521c8de482e881017110f8a3e0d4</a><br><a target="_blank" rel="noopener" href="https://kimi.moonshot.cn/">https://kimi.moonshot.cn/</a></p>
-<blockquote>
-<p>Written with <a target="_blank" rel="noopener" href="https://stackedit.cn/">StackEdit中文版</a>.</p>
-</blockquote>
-
+        
+          <p class="article-more-link">
+            <a href="/2024/05/18/My-New-Post/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -134,7 +110,7 @@ End Function
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/email-VBA-OUTLOOK-EXCEL/" rel="tag">email, VBA, OUTLOOK, EXCEL</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EXCEL/" rel="tag">EXCEL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OUTLOOK/" rel="tag">OUTLOOK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VBA/" rel="tag">VBA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/email/" rel="tag">email</a></li></ul>
 
     </footer>
   </div>
@@ -208,7 +184,7 @@ End Function
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/email-VBA-OUTLOOK-EXCEL/" rel="tag">email, VBA, OUTLOOK, EXCEL</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/EXCEL/" rel="tag">EXCEL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OUTLOOK/" rel="tag">OUTLOOK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VBA/" rel="tag">VBA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/" rel="tag">email</a></li></ul>
     </div>
   </div>
 
@@ -218,7 +194,7 @@ End Function
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/email-VBA-OUTLOOK-EXCEL/" style="font-size: 10px;">email, VBA, OUTLOOK, EXCEL</a>
+      <a href="/tags/EXCEL/" style="font-size: 10px;">EXCEL</a> <a href="/tags/OUTLOOK/" style="font-size: 10px;">OUTLOOK</a> <a href="/tags/VBA/" style="font-size: 10px;">VBA</a> <a href="/tags/email/" style="font-size: 10px;">email</a>
     </div>
   </div>
 

@@ -6,17 +6,20 @@
   
   <title>批量发送邮件excel，vba，outlook | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="VBA代码添加参数(邮件地址，主题，内容，附件&#39; Public Function sendemail(sendto As String, subj As String, mbody As String, filepath As String)     On Error Resume Next     Dim oLApp As Object     Dim oItem As Object">
+  <meta name="description" content="使用注意事项：VBA代码如下，编写&#96;sendemail()&#96;函数 在excel中使用这个函数，有四个参数，邮箱地址，邮件主题，邮件内容，邮件附件。 为了邮件内容在收件箱中有正常的邮件格式，需要修改为html格式，可以使用在线工具完成，如：https:&#x2F;&#x2F;www.iamwawa.cn&#x2F;text2html.html 邮件附件可以是0-多个。按需在函数中定义，增加或删减filepath As Strin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="批量发送邮件excel，vba，outlook">
 <meta property="og:url" content="http://example.com/2024/05/18/My-New-Post/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="VBA代码添加参数(邮件地址，主题，内容，附件&#39; Public Function sendemail(sendto As String, subj As String, mbody As String, filepath As String)     On Error Resume Next     Dim oLApp As Object     Dim oItem As Object">
+<meta property="og:description" content="使用注意事项：VBA代码如下，编写&#96;sendemail()&#96;函数 在excel中使用这个函数，有四个参数，邮箱地址，邮件主题，邮件内容，邮件附件。 为了邮件内容在收件箱中有正常的邮件格式，需要修改为html格式，可以使用在线工具完成，如：https:&#x2F;&#x2F;www.iamwawa.cn&#x2F;text2html.html 邮件附件可以是0-多个。按需在函数中定义，增加或删减filepath As Strin">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-18T07:29:45.000Z">
-<meta property="article:modified_time" content="2024-05-18T08:01:32.698Z">
+<meta property="article:modified_time" content="2024-05-18T08:06:42.902Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="email, VBA, OUTLOOK, EXCEL">
+<meta property="article:tag" content="email">
+<meta property="article:tag" content="VBA">
+<meta property="article:tag" content="OUTLOOK">
+<meta property="article:tag" content="EXCEL">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -94,7 +97,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="VBA代码"><a href="#VBA代码" class="headerlink" title="VBA代码"></a>VBA代码</h3><pre><code>添加参数(邮件地址，主题，内容，附件&#39;
+        <h3 id="使用注意事项："><a href="#使用注意事项：" class="headerlink" title="使用注意事项："></a>使用注意事项：</h3><pre><code>VBA代码如下，编写`sendemail()`函数
+在excel中使用这个函数，有四个参数，邮箱地址，邮件主题，邮件内容，邮件附件。
+为了邮件内容在收件箱中有正常的邮件格式，需要修改为html格式，可以使用在线工具完成，如：https://www.iamwawa.cn/text2html.html
+邮件附件可以是0-多个。按需在函数中定义，增加或删减filepath As String参数。
+使用时，在函数所在单元格回车，可看到“发送成功”字样，邮件即发出。
+发件人是outlook中的默认发件人。
+</code></pre>
+<span id="more"></span>
+
+<h3 id="VBA代码"><a href="#VBA代码" class="headerlink" title="VBA代码"></a>VBA代码</h3><pre><code>添加参数(邮件地址，主题，内容，附件&#39;
 Public Function sendemail(sendto As String, subj As String, mbody As String, filepath As String)
     On Error Resume Next
     Dim oLApp As Object
@@ -124,7 +136,6 @@ Public Function sendemail(sendto As String, subj As String, mbody As String, fil
     Set oItem = Nothing
 End Function
 </code></pre>
-<p>使用注意事项：	<br>    VBA代码如上，编写<code>sendemail()</code>函数<br>    在excel中使用这个函数，有四个参数，邮箱地址，邮件主题，邮件内容，邮件附件。<br>    为了邮件内容在收件箱中有正常的邮件格式，需要修改为html格式，可以使用在线工具完成，如：<a target="_blank" rel="noopener" href="https://www.iamwawa.cn/text2html.html">https://www.iamwawa.cn/text2html.html</a><br>    邮件附件可以是0-多个。按需在函数中定义，增加或删减filepath As String参数。<br>    使用时，在函数所在单元格回车，可看到“发送成功”字样，邮件即发出。<br>    发件人是outlook中的默认发件人。</p>
 <p>学习地址：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wr4y157B5/?spm_id_from=333.999.0.0&vd_source=c654521c8de482e881017110f8a3e0d4">https://www.bilibili.com/video/BV1wr4y157B5/?spm_id_from=333.999.0.0&amp;vd_source=c654521c8de482e881017110f8a3e0d4</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1zB4y1L7ir/?spm_id_from=333.999.0.0&vd_source=c654521c8de482e881017110f8a3e0d4">https://www.bilibili.com/video/BV1zB4y1L7ir/?spm_id_from=333.999.0.0&amp;vd_source=c654521c8de482e881017110f8a3e0d4</a><br><a target="_blank" rel="noopener" href="https://kimi.moonshot.cn/">https://kimi.moonshot.cn/</a></p>
 <blockquote>
 <p>Written with <a target="_blank" rel="noopener" href="https://stackedit.cn/">StackEdit中文版</a>.</p>
@@ -137,7 +148,7 @@ End Function
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/email-VBA-OUTLOOK-EXCEL/" rel="tag">email, VBA, OUTLOOK, EXCEL</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EXCEL/" rel="tag">EXCEL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OUTLOOK/" rel="tag">OUTLOOK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VBA/" rel="tag">VBA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/email/" rel="tag">email</a></li></ul>
 
     </footer>
   </div>
@@ -168,7 +179,7 @@ End Function
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/email-VBA-OUTLOOK-EXCEL/" rel="tag">email, VBA, OUTLOOK, EXCEL</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/EXCEL/" rel="tag">EXCEL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OUTLOOK/" rel="tag">OUTLOOK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VBA/" rel="tag">VBA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/" rel="tag">email</a></li></ul>
     </div>
   </div>
 
@@ -178,7 +189,7 @@ End Function
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/email-VBA-OUTLOOK-EXCEL/" style="font-size: 10px;">email, VBA, OUTLOOK, EXCEL</a>
+      <a href="/tags/EXCEL/" style="font-size: 10px;">EXCEL</a> <a href="/tags/OUTLOOK/" style="font-size: 10px;">OUTLOOK</a> <a href="/tags/VBA/" style="font-size: 10px;">VBA</a> <a href="/tags/email/" style="font-size: 10px;">email</a>
     </div>
   </div>
 
